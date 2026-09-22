@@ -36,6 +36,10 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "rea
 import portraitAsset from "@/assets/preethi-portrait.png.asset.json";
 import { ActionButton, ActionLink } from "@/components/ui/action";
 
+const email = "preethiawaradi33@gmail.com";
+const linkedInUrl = "https://www.linkedin.com/in/preethi-awaradi-b4003136b";
+const githubUrl = "https://github.com/PreethiAwaradi";
+
 const navItems = [
   ["home", "Home"],
   ["about", "About"],
@@ -245,7 +249,7 @@ export default function Portfolio() {
     const data = new FormData(event.currentTarget);
     const subject = encodeURIComponent(String(data.get("subject") || "Portfolio hello"));
     const body = encodeURIComponent(`${String(data.get("name") || "Visitor")} wrote:\n\n${String(data.get("message") || "")}`);
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -352,7 +356,7 @@ export default function Portfolio() {
         <div className="contact-copy">
           <SectionHeading index="07" eyebrow="LET'S CONNECT">Let's build something<br/><em>meaningful.</em></SectionHeading>
           <p className="reveal">Have an opportunity, idea, or simply want to talk technology? I'd love to hear from you.</p>
-          <div className="social-row reveal"><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href="mailto:" aria-label="Email"><Mail/></a></div>
+          <div className="social-row reveal"><a href={linkedInUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href={githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href={`mailto:${email}`} aria-label="Email"><Mail/></a></div>
         </div>
         <form className="contact-form reveal" onSubmit={submitContact}>
           <label><span>Your name</span><input name="name" required placeholder="How should I address you?" /></label>
