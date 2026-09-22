@@ -1,4 +1,4 @@
-name: Deploy Portfolio to GitHub Pages
+name: Deploy Portfolio
 
 on:
   push:
@@ -11,19 +11,15 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -34,21 +30,26 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Check build output
-  run: |
-    echo "Current directory:"
-    pwd
-    echo "Files and folders:"
-    ls -la
-    echo "Searching for build output:"
-    find . -type d \( -name dist -o -name build \) -not -path './node_modules/*'
+      - name: Prepare website
+        run: |
+          rm -rf site
+          mkdir site
+          if [ -d dist ]; then
+            cp -R dist/. site/
+          elif [ -d build ]; then
+            cp -R build/. site/
+          else
+            echo "Build folder not found"
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./site
 
   deploy:
     environment:
