@@ -137,13 +137,13 @@ function Loader({ done }: { done: () => void }) {
   useEffect(() => {
     let value = 0;
     const id = window.setInterval(() => {
-      value += Math.ceil(Math.random() * 9);
+      value += 5;
       if (value >= 100) {
         value = 100; window.clearInterval(id); setLeaving(true);
-        window.setTimeout(done, 500);
+        window.setTimeout(done, 420);
       }
       setProgress(value);
-    }, 70);
+    }, 45);
     return () => window.clearInterval(id);
   }, [done]);
   return (
