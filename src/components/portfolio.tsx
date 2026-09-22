@@ -269,7 +269,7 @@ export default function Portfolio() {
         <div className="hero-grid" />
         <div className="hero-copy">
           <div className="status-pill"><span /> OPEN TO LEARNING & COLLABORATION</div>
-          <p className="hero-kicker">COMPUTER SCIENCE ENGINEER · CYBERSECURITY EXPLORER</p>
+          <p className="hero-kicker">COMPUTER SCIENCE ENGINEERING · 3RD YEAR · 5TH SEMESTER</p>
           <h1 aria-label="Preethi Awaradi">{"Preethi".split("").map((letter, i) => <span key={i} style={{ "--i": i } as React.CSSProperties}>{letter}</span>)}<br/><strong>{"Awaradi".split("").map((letter, i) => <span key={i} style={{ "--i": i + 7 } as React.CSSProperties}>{letter}</span>)}</strong></h1>
           <p className="hero-summary">I explore how technology, secure systems, and thoughtful problem-solving can shape a safer digital future.</p>
           <div className="hero-actions">
