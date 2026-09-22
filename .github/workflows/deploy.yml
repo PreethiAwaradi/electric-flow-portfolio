@@ -35,8 +35,13 @@ jobs:
         run: npm run build
 
       - name: Check build output
-        run: ls -la dist
-
+  run: |
+    echo "Current directory:"
+    pwd
+    echo "Files and folders:"
+    ls -la
+    echo "Searching for build output:"
+    find . -type d \( -name dist -o -name build \) -not -path './node_modules/*'
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
