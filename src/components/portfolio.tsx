@@ -291,7 +291,7 @@ export default function Portfolio() {
       <section id="about" className="content-section about-section">
         <SectionHeading index="01" eyebrow="A LITTLE ABOUT ME">Curious mind.<br/><em>Purposeful builder.</em></SectionHeading>
         <div className="about-layout">
-          <div className="about-copy reveal"><p className="lead">I'm a Computer Science Engineering student driven by curiosity about technology and the systems that keep our digital world secure.</p><p>I enjoy breaking complex ideas into clear steps, working with people, and growing through every new challenge. For me, learning is not a phase—it's how I build momentum.</p></div>
+          <div className="about-copy reveal"><p className="lead">I'm a third-year Computer Science Engineering student in my 5th semester, driven by curiosity about technology and the systems that keep our digital world secure.</p><p>I enjoy breaking complex ideas into clear steps, working with people, and growing through every new challenge. For me, learning is not a phase—it's how I build momentum.</p></div>
           <div className="about-cards">
             <IconCard icon={BrainCircuit} title="Always learning" delay={0}>Turning new concepts into practical understanding.</IconCard>
             <IconCard icon={Target} title="Problem focused" delay={100}>Looking for clear, thoughtful paths through complexity.</IconCard>
