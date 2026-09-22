@@ -37,9 +37,21 @@ jobs:
 
       - name: Check website files
         run: |
-          echo "Website files:"
-          ls -la site
-          test -f site/index.html
+          echo "Current directory:"
+          pwd
+
+          echo "All files:"
+          ls -la
+
+          echo "Website folder:"
+          if [ -d site ]; then
+            ls -la site
+          else
+            echo "ERROR: site folder does not exist"
+          fi
+
+          echo "Searching for index.html:"
+          find . -name index.html -not -path './node_modules/*'
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
