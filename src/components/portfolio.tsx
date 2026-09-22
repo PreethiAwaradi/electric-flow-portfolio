@@ -112,6 +112,7 @@ function AmbientCanvas() {
         ctx.fillStyle = "rgba(50, 214, 255, .56)"; ctx.fill();
         for (let j = index + 1; j < dots.length; j += 1) {
           const other = dots[j];
+          if (!other) continue;
           const ox = other.x * width; const oy = other.y * height;
           const distance = Math.hypot(x - ox, y - oy);
           if (distance < 135) {
